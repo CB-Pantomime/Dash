@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Free Write!{% endblock %}
+
+{% block content %}
+
+
+    <h2>Free Write!</h2>
+
+    <section class="createPoem">
+        <!-- need csrf token set up etc. -->
+        <form method="post" action="">
+            <div class="mb-3">
+                <label for="name" class="form-label" aria-label="What is your name?"></label>
+                <input type="text" class="form-control" id="name" placeholder="What is your name?" rows="1" required></input>
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label" aria-label="What is the title of your poem?"></label>
+                <input type="text" class="form-control" id="title" placeholder="What is the title your poem?" rows="1" required></input>
+            </div>
+            <div class="mb-3">
+                <label for="body" class="form-label" aria-label="Type your words here..."></label>
+                <textarea class="form-control" id="body" placeholder="Type your words here..." rows="8" required></textarea>
+            </div>
+            <div>          
+                <input type="submit" class="btn" value="Save your poem" aria-label="Save your poem"/>
+            </div> 
+        </form>       
+    </section>
+
+  
+{% endblock %}
