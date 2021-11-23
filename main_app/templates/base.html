@@ -16,12 +16,21 @@
             <a class="navbar-brand" href="/">Dash</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-                </button>
+                </button>              
+
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="#">Sign Up</a>
-                        <a class="nav-link" href="#">Log In</a>
-                    </div>
+                    
+                    {% if user.is_authenticated %}
+                        <div class="navbar-nav">     
+                            <span class="navbar-item">Welcome: dyn ren name</span>               
+                            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                        </div>
+                    {% else %}
+                        <div class="navbar-nav"> 
+                            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </nav>
