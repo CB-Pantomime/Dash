@@ -5,6 +5,15 @@ urlpatterns = [
     # home url
     path('', views.Home.as_view(), name ="home"),
 
+    # start of account urls
+    path('accounts/signup/', views.Signup.as_view(), name="signup"),
+    # end of account urls
+
+    # start of profile urls
+    path('profile/<int:pk>', views.ProfileDetail.as_view(), name="profile_detail"),
+    path('profile/<int:pk>/update', views.ProfileDetail.as_view(), name="profile_update"),
+    # end of profile urls
+
     # start of create poem urls
     path('create', views.CreateIndex.as_view(), name ="create_index"),
     path('create/beach', views.CreateBeach.as_view(), name ="create_beach"),
@@ -12,11 +21,6 @@ urlpatterns = [
     path('create/touch', views.CreateTouch.as_view(), name ="create_touch"),
     path('create/freewrite', views.CreateFreeWrite.as_view(), name ="create_free_write"),
     # end of create poem urls
-
-    # start of profile urls
-    path('profile/<int:pk>', views.ProfileDetail.as_view(), name="profile_detail"),
-    path('profile/<int:pk>/update', views.ProfileDetail.as_view(), name="profile_update"),
-    # end of profile urls
 
     # start of poem urls
     path('poems/<int:pk>/new-poem', views.PoemCreate.as_view(), name ="poem_create"),
