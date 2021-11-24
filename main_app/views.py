@@ -6,7 +6,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-
+from django.contrib.auth.models import User
 
 # IMPORT MODELS
 from .models import Poem
@@ -47,11 +47,18 @@ class Signup(View):
 @method_decorator(login_required, name='dispatch')
 class ProfileDetail(DetailView):
 
+    model = User
     template_name = "profile_detail.html"
 
-class ProfileUpdate(UpdateView):
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     # context["poems"] = Poem.objects.all()
+    #     return context
 
-    template_name = "profile_update.html"
+
+# class ProfileUpdate(UpdateView):
+
+#     template_name = "profile_update.html"
 
 # END PROFILE VIEWS
 
@@ -83,15 +90,10 @@ class CreateFreeWrite(TemplateView):
 
     template_name = "create_free_write.html"
 
-# END CREATE VIEWS
-
-
-
-# START POEM VIEWS
-@method_decorator(login_required, name='dispatch')
-class PoemCreate(CreateView):
-
-    def post(self, request, pk):
+    def post(self, request, user_id):
+    #     def get_user(request):
+    #         current_user = request.user
+    #         return current_user
         
         name = request.POST.get("name")
         title = request.POST.get("title")
@@ -99,10 +101,62 @@ class PoemCreate(CreateView):
         Poem.objects.create(name=name, title=title, body=body)
         return redirect("confirm-continue.html")
 
+# END CREATE VIEWS
+
+
+
+
+
+
+# START POEM VIEWS
+@method_decorator(login_required, name='dispatch')
+class PoemCreate(View):
+
+    # template_name = "create_free_write.html"
+
+    def post(self, request):
+        # print(f'Here is name: {request.POST}')
+        name = request.POST.get("name")
+        title = request.POST.get("title")
+        body = request.POST.get("body")
+        Poem.objects.create(name=name, title=title, body=body)
+        return redirect("confirm-continue")
+
+
+    def form_valid(self, form):
+            form.instance.user = self.request.user
+            return super(PoemCreate, self).form_valid(form)
+
+
+
+
 @method_decorator(login_required, name='dispatch')
 class PoemsIndex(TemplateView):
 
+    model = Poem
     template_name = "poems_index.html"
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        name = self.request.GET.get("name")
+        if name != None:
+            context["poems"] = Poem.objects.filter(name__icontains=name)
+        else:
+
+            context["poems"] = Poem.objects.all()
+        return context
+
+    def form_valid(self, form):
+        
+            form.instance.user = self.request.user
+            return super(PoemsIndex, self).form_valid(form)
+
+
+
+
+
+
 
 @method_decorator(login_required, name='dispatch')
 class PoemDetail(DetailView):
