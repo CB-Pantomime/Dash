@@ -11,7 +11,7 @@ urlpatterns = [
 
     # start of profile urls
     path('profile/<int:pk>', views.ProfileDetail.as_view(), name="profile_detail"),
-    path('profile/<int:pk>/update', views.ProfileDetail.as_view(), name="profile_update"),
+    # path('profile/<int:pk>/update', views.ProfileDetail.as_view(), name="profile_update"),
     # end of profile urls
 
     # start of create poem urls
@@ -23,9 +23,11 @@ urlpatterns = [
     # end of create poem urls
 
     # start of poem urls
-    path('poems/<int:pk>/new-poem', views.PoemCreate.as_view(), name ="poem_create"),
+    path('poems/new-poem', views.PoemCreate.as_view(), name ="poem_create"),
     path('confirm', views.Confirm.as_view(), name ="confirm-continue"),
-    path('poems', views.PoemsIndex.as_view(), name ="poems_index"),
+    path('profile/poems', views.PoemsIndex.as_view(), name ="poems_index"),
+
+    # How do I pass this the object pk from the Poem model and have it related to the profile/account?
     path('poems/<int:pk>', views.PoemDetail.as_view(), name ="poem_detail"),
     # end of poem urls
 ]
