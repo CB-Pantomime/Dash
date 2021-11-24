@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Free Write!{% endblock %}
 
 {% block content %}
 
 
-    <h2>Free Write!</h2>
+    <h2 class="pageTitle">Free Write!</h2>
 
-    <section class="createPoem">
+    <div class="container-md">
         
         <form method="post" action="{% url 'poem_create' %}">{% csrf_token %}
             <div class="mb-3">
@@ -19,13 +20,30 @@
             </div>
             <div class="mb-3">
                 <label for="body" class="form-label" aria-label="Type your words here..."></label>
-                <textarea class="form-control" id="body" placeholder="Type your words here..." rows="8" name="body"required></textarea>
+
+                <textarea class="form-control" id="textAreaBody" placeholder="Type your words here..." rows="8" name="body"required></textarea>
             </div>
+
             <div>          
                 <input type="submit" class="btn" value="Save your poem" aria-label="Save your poem"/>
             </div> 
-        </form>       
-    </section>
+        </form>      
+
+    </div>
+    
+    <div class="container-md">
+
+        <div class="card">
+           
+            <div class="card-body">
+              <blockquote class="blockquote mb-5">
+                <h5> <span id="centerWords">can, down, find, funny, once, open</span></h5> 
+              </blockquote>
+            </div>
+          </div>
+
+
+    </div>
 
   
 {% endblock %}
