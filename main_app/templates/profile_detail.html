@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
-{% block title %}Home{% endblock %}
+{% block title %}Your Profile{% endblock %}
 
 {% block content %}
-
-    
-    <div class="container-lg">
-        <h1>profile detail</h1>
-    </div>
    
-        
+    <h1>profile detail page</h1>
+
+        <div class="container-lg">
+            <a href="{% url 'create_index' %}"><p>student create portal</p></a>
+        </div>
+    
+         
+
+           <div class="container-lg">
+                <a href="{% url 'poems_index' %}"><p>view all student work</p></a>
+            </div>
+
 {% endblock %}
