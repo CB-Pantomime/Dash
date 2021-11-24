@@ -1,0 +1,36 @@
+
+
+
+
+/******* start create free write css *******/
+
+#title, #name {
+    border: 2px solid rgb(24, 24, 26);
+}
+
+#textAreaBody {
+    width: 100%;
+    height: 400px;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    border: 2px solid rgb(24, 24, 26);
+    border-radius: 4px;
+    background-color: white;
+    resize: none;
+  }
+
+.createPoem {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.pageTitle {
+    text-decoration-color: #15b6b6;
+}
+
+.centerWords {
+    text-align: center;
+}
