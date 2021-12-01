@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Poem Update{% endblock %}
+
+{% block content %}
+
+{% comment %} why is this giving me trouble: {% url 'poem_update' %} ?? when placed in the action= ??? {% endcomment%} 
+
+
+    <form method="post" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit" />
+    </form>
+    
+
+
+{% endblock %}
