@@ -16,7 +16,7 @@
         <div class="poem-title">
             {{poem.title}}
         </div>     
-        <a class="poem-link" href="{% url 'poem_detail' user.id%}"><button>Student: {{poem.name}}</button></a> 
+        <a class="poem-link" href="{% url 'poem_detail' poem.id%}"><button>Student: {{poem.name}}</button></a> 
     {% endfor %}             
     </div>
 

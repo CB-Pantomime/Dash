@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Poem Update{% endblock %}
+
+{% block content %}
+   
+<h1 class="title pt-5">Sup teach. U sure you want to delete this poem?</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div class="buttons">
+   <!-- confirm artist delete -->
+    <input class="button is-danger" type="submit" value="Confirm" />
+    <!-- Redirect back to detail on cancel -->
+    <a class="button is-primary" href="{% url 'poem_detail' poem.id %}"
+      >Cancel</a
+    >
+  </div>
+</form>
+
+{% endblock %}

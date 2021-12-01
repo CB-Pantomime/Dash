@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Poem(models.Model):
 
@@ -13,3 +14,13 @@ class Poem(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
+
+
+# blank is for django? null is for db? 
+# blank=True, null=True,
+
+# to being db user id at 1 or no? 
+# default=1 
