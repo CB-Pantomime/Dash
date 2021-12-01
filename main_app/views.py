@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User
 from django.urls import reverse
+from .forms import PoemForm
 
 # IMPORT MODELS
 from .models import Poem
@@ -71,59 +72,68 @@ class CreateIndex(TemplateView):
 
     template_name = "create_index.html"
 
-@method_decorator(login_required, name='dispatch')
-class CreateBeach(TemplateView):
 
+@method_decorator(login_required, name='dispatch')
+class CreateBeach(CreateView):
+
+    model = Poem
+    form_class = PoemForm
     template_name = "create_beach.html"
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CreateBeach, self).form_valid(form)
+
+    def get_success_url(self):
+       return reverse('poem_detail', kwargs={'pk': self.object.pk})
+
 
 @method_decorator(login_required, name='dispatch')
-class CreateAnimals(TemplateView):
+class CreateAnimals(CreateView):
 
+    model = Poem
+    form_class = PoemForm
     template_name = "create_animals.html"
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CreateAnimals, self).form_valid(form)
+
+    def get_success_url(self):
+       return reverse('poem_detail', kwargs={'pk': self.object.pk})
+
 
 @method_decorator(login_required, name='dispatch')
-class CreateTouch(TemplateView):
+class CreateTouch(CreateView):
 
+    model = Poem
+    form_class = PoemForm
     template_name = "create_touch.html"
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CreateTouch, self).form_valid(form)
+
+    def get_success_url(self):
+       return reverse('poem_detail', kwargs={'pk': self.object.pk})
 
 
-# ***************************************
-# JUST WORKING WITH THIS ONE FOR NOW
 @method_decorator(login_required, name='dispatch')
 class CreateFreeWrite(CreateView):
 
     model = Poem
-    fields = ['name', 'title', 'body']
+    form_class = PoemForm
     template_name = "create_free_write.html"
     
-    # This is our new method that will add the user into our submitted form
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(CreateFreeWrite, self).form_valid(form)
-
-    # def get_success_url(self):
-    #     return reverse('/')
 
     def get_success_url(self):
        return reverse('poem_detail', kwargs={'pk': self.object.pk})
 
    
 
-
-
-    # def get_success_url(self):
-    #     return redirect('confirm')
-    # success_url = "confirm"
-    # def post(self, request, user_id):
-    #     def get_user(request):
-    #         current_user = request.user
-    #         return current_user
-        
-    #     name = request.POST.get("name")
-    #     title = request.POST.get("title")
-    #     body = request.POST.get("body")
-    #     Poem.objects.create(name=name, title=title, body=body)
-    #     return redirect("confirm-continue.html")
 
 # END CREATE VIEWS
 
