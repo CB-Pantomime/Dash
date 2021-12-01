@@ -1,24 +1,5 @@
 
-
-
-
-/******* start create free write css *******/
-/* EACH CREATE PAGE HAS A UNIQUE GRADIENT */
-.gradient1 {
-    background-image: linear-gradient(#f1f0b2, #d987ee);
-}
-
-.gradient2 {
-    background-image: linear-gradient(#ccf3d8, #99e5f7, #d987ee);
-}
-
-.gradient3 {
-    background-image: linear-gradient(#f7ffb3, #aefff1, #ffe59d);
-}
-/* END GRADIENTS */
-
-
-
+/********* Home Page CSS *********/
 #homeDiv {
     padding: 88px;
 
@@ -35,7 +16,39 @@
     /* padding: 25px;   */
 }
 
-.formContainer {
+/********* END Home Page CSS *********/
+
+
+
+/********* Gradients for Create Page Backgrounds (Each page unique) *********/
+.gradient1 {
+    background-image: linear-gradient(#f1f0b2, #d987ee);
+}
+
+.gradient2 {
+    background-image: linear-gradient(#ccf3d8, #99e5f7, #d987ee);
+}
+
+.gradient3 {
+    background-image: linear-gradient(#f7ffb3, #aefff1, #ffe59d);
+}
+/********* END GRADIENTS *********/
+
+
+
+/********* General Create Pages CSS *********/
+#fullContentStyling{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 500px;
+}
+
+label {
+    display: none;
+}
+
+#formContainer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,59 +75,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 25px 50px 60px 50px;
+    /* padding: 25px 50px 60px 50px; */
 
 }
 .btn {
-    border: 2px solid rgb(87, 204, 106);
-    text-decoration: wavy;
+    border: 2px solid rgb(11, 14, 12);
+    text-decoration: bold;
 }
 
 .card-body {
     border: 2px solid rgb(5, 5, 5);
 }
 
-
-
-/* Word Bank CSS */
-/* #centerWordBankTitle {
-    text-align: center;
-}
-
-#centerWordBankWords {
-    text-align: center;
-} */
- 
+/********* END General Create Pages CSS *********/
 
 
 
-
-/* **************** */
-/* BRIAN DA CSS LORD */
-/* form.form-test {
-    background-color: red;
-}
-
-label {
-    background-color: blue;
-}
-
-input {
-    border-radius: 10px;
-} */
-/* **************** */
-
-
-
-
-
-
-
-
-
-
-
-/* Carousel CSS */
+/********* Carousel Word Bank CSS *********/
 .carousel .carousel-item {
     height: 250px;
     width: 100%;
@@ -132,8 +109,11 @@ input {
     margin-bottom:  100px;
 }
 
+/********* END Carousel Word Bank CSS *********/
 
-/* Placing Images */
+
+
+/********* Positioning Images CSS *********/
 /* * {
     box-sizing: border-box;
 } */
@@ -158,3 +138,36 @@ input {
   ul li {
     float:left;
   } */
+
+  /********* END Positioning Images CSS *********/
+
+
+
+  /********* Word Bank (fixed) CSS *********/
+
+/* #centerWordBankTitle {
+    text-align: center;
+}
+
+#centerWordBankWords {
+    text-align: center;
+} */
+ 
+/********* END Word Bank (fixed) CSS *********/
+
+
+
+/* **************** */
+/* BRIAN DA CSS LORD */
+/* form.form-test {
+    background-color: red;
+}
+
+label {
+    background-color: blue;
+}
+
+input {
+    border-radius: 10px;
+} */
+/* **************** */

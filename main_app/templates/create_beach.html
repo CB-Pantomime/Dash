@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}A Day At The Beach{% endblock %}
 
 {% block content %}
 
     <body class="gradient3">
 
+    <!-- This div styles and shapes the overall content on the page -->
+    <div class="container-md" id="fullContentStyling">
     <h1 class="pageTitle">A Day At The Beach</h1>
 
-    <div class="container-md" id="formContainer">
+    <!-- <div class="container-md" id="formContainer">
         
-        <form method="post" action="{% url 'poem_create' %}">{% csrf_token %}
+        <form method="post" action="">{% csrf_token %}
             <div class="mb-3">
                 <label for="name" class="form-label" aria-label="What is your name?"></label>               
                 <input type="text" class="form-control" id="name" placeholder="What is your name?" rows="1" name="name" required/>
@@ -27,7 +30,7 @@
                 <input type="submit" class="btn" value="Save your poem" text-decoration="bold" aria-label="Save your poem"/>
             </div> 
         </form>      
-    </div>
+    </div> -->
 
 
     <!-- <div class="container-sm">
@@ -63,7 +66,28 @@
         </div>
     </div> -->
 
-    <div class="row">
+
+    
+    <!-- This whole div may need to be placed at top, before carousel etc... -->
+      <!-- Create Poem Form -->
+      <div class="container-md" id="formContainer">
+        <div class="form-group">
+            <!-- class="form-control" took this out of the form tag, made it messy but why?  -->
+            <form method="post">
+                <!-- Security Feature  -->
+                {% csrf_token %} 
+                <!--  Generate inputs  -->
+                {{form.as_p}} 
+                <!-- {{form.PoemForm}}  -->
+                <!--  Submit form  -->
+                <button class="btn" id="buttonPlacement">Save your poem</button>
+                
+            </form>
+        </div>
+    </div>
+
+
+    <!-- <div class="row">
         <div class="column">
           <img src="https://i.ibb.co/NY29Qk8/Sun.jpg" alt="Sun" style="width:100%">
         </div>
@@ -76,9 +100,11 @@
         <div class="column">
             <img src="https://i.ibb.co/ZhpGt1x/Sea.jpg" alt="Sea" style="width:100%">
           </div>
-      </div>
+      </div> -->
 
-     
+
+      <!-- Closing div for fullContentStyling -->
+    </div>
     </body>
       
 {% endblock %}
