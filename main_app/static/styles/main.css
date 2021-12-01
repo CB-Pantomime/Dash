@@ -1,13 +1,41 @@
 
+
+/********* Nav Bar CSS *********/
+#navField {
+    background-color: #d2f3cb;
+}
+
+#homeLink{
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+
+.nav-link {
+    font-family: 'Josefin Sans', sans-serif;
+}
+/********* END Nav Bar CSS *********/
+
+
+
 /********* Home Page CSS *********/
 #homeDiv {
     padding: 88px;
 
 }
+
+#styleA {
+    text-decoration-line: underline;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 4px;
+    text-decoration-color: rgb(245, 251, 155);
+}
+
 .pageTitle {
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     padding: 50px;  
+    color: white;
+    text-shadow: 4px 4px #d987ee;
 }
 
 .dashBlurb {
