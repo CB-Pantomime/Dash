@@ -3,34 +3,158 @@
 
 
 /******* start create free write css *******/
-
-#title, #name {
-    border: 2px solid rgb(24, 24, 26);
+/* EACH CREATE PAGE HAS A UNIQUE GRADIENT */
+.gradient1 {
+    background-image: linear-gradient(#f1f0b2, #d987ee);
 }
 
-#textAreaBody {
-    width: 100%;
-    height: 400px;
-    padding: 14px 20px;
-    box-sizing: border-box;
-    border: 2px solid rgb(24, 24, 26);
-    border-radius: 4px;
-    background-color: white;
-    resize: none;
-  }
+.gradient2 {
+    background-image: linear-gradient(#ccf3d8, #99e5f7, #d987ee);
+}
 
-.createPoem {
+.gradient3 {
+    background-image: linear-gradient(#f7ffb3, #aefff1, #ffe59d);
+}
+/* END GRADIENTS */
 
+
+
+#homeDiv {
+    padding: 88px;
+
+}
+.pageTitle {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    padding: 50px;  
+}
+
+.dashBlurb {
+    font-family: 'Josefin Sans', sans-serif; 
+    text-align: center;
+    /* padding: 25px;   */
+}
+
+.formContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    /* flex direction could be good and define that as ROW. 
+    keep in mind a sense of direction, what goes first in that row */
 }
 
-.pageTitle {
-    text-decoration-color: #15b6b6;
+#title, #name {
+    border: 2px solid rgb(5, 5, 5);
+} 
+
+#textAreaBody {
+    width: 100%;
+    height: 250px;
+    padding: 14px 20px;
+    /* box-sizing: border-box; */
+    border: 2px solid rgb(5, 5, 5);
+    border-radius: 4px;
+    background-color: white;
+    resize: none;
 }
 
-.centerWords {
+#buttonPlacement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 50px 60px 50px;
+
+}
+.btn {
+    border: 2px solid rgb(87, 204, 106);
+    text-decoration: wavy;
+}
+
+.card-body {
+    border: 2px solid rgb(5, 5, 5);
+}
+
+
+
+/* Word Bank CSS */
+/* #centerWordBankTitle {
     text-align: center;
 }
+
+#centerWordBankWords {
+    text-align: center;
+} */
+ 
+
+
+
+
+/* **************** */
+/* BRIAN DA CSS LORD */
+/* form.form-test {
+    background-color: red;
+}
+
+label {
+    background-color: blue;
+}
+
+input {
+    border-radius: 10px;
+} */
+/* **************** */
+
+
+
+
+
+
+
+
+
+
+
+/* Carousel CSS */
+.carousel .carousel-item {
+    height: 250px;
+    width: 100%;
+}
+  
+.carousel-item img {
+      position: absolute;
+      object-fit:cover;
+      top: 0;
+      left: 0;
+      min-height: 200px;
+}
+
+#wordBankCarousel {
+    margin-bottom:  100px;
+}
+
+
+/* Placing Images */
+/* * {
+    box-sizing: border-box;
+} */
+.column {
+    float: none;
+    width: 25%;
+    padding: 5px;
+  }
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+/* some scratch ideas for listing images in a row */
+  /* ul {
+    list-style:none;
+  }
+  
+  ul li {
+    float:left;
+  } */

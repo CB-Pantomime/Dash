@@ -4,13 +4,27 @@
 {% block content %}
    
     <h1>poem detail page</h1>
+    <div class="container">
 
-    <div class="poems">
-        <div class="poem">
-            <h3>{{poem.title}}</h3>
-            <h5>{{poem.name}}</h5>
-            <p>{{poem.body}}</p>
-        </div>                  
+        <div class="poems">
+            <div class="poem">
+                <h3>Title: {{poem.title}}</h3>
+                <h5>Student: {{poem.name}}</h5>
+                <p>Poem: {{poem.body}}</p>
+            </div>                  
+        </div>
+
+        <div>  
+      
+            <a href="{% url 'poem_update' poem.id %}" class="button is-info">
+                Edit 
+            </a>
+            <a href="{% url 'poem_delete' poem.id %}" class="button is-danger">
+                Delete 
+            </a>
+       
+        </div>  
+
     </div>
-     
+
 {% endblock %}
