@@ -52,10 +52,11 @@ class ProfileDetail(DetailView):
     model = User
     template_name = "profile_detail.html"
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     # context["poems"] = Poem.objects.all()
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["poems"] = Poem.objects.all()
+        return context
+
 
 
 # class ProfileUpdate(UpdateView):
