@@ -34,6 +34,14 @@
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     padding: 50px;  
+    color: rgb(3, 3, 3);
+    /* text-shadow: 5px 5px #d987ee; */
+}
+
+.homePageTitle {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    padding: 50px;  
     color: white;
     text-shadow: 5px 5px #d987ee;
 }
@@ -48,17 +56,122 @@
 
 
 
+/********* Profile Page CSS *********/
+#profilePageBox {
+    text-align: center;
+    padding: 70px;
+}
+
+.profilePageTitle {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    padding: 50px;  
+    color: white;
+    text-shadow: 2px 2px #d987ee;
+}
+
+/********* END Profile Page CSS *********/
+
+
+
+/********* Poems Index  CSS *********/
+#poemsIndexFullContentStyling {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    /* padding: 20px; */
+    /* margin-top: 10px;
+    margin-bottom: 50px; */
+}
+#poemsIndexBox {
+    display: grid;
+    margin: 10px;
+    text-align: center;
+    padding: 160px;
+}
+
+#poemsIndexCards {
+    display: flex;
+    margin: 10px;
+    border: 1px solid rgb(5, 5, 5);
+    border-radius: 4px;
+    margin: 10px;
+}
+
+/********* END Poems Index  CSS *********/
+
+
+/********* Create Index CSS *********/
+#createIndexFullContentStyling {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 20px;
+    margin-top: 300px;
+    margin-bottom: 800px;
+}
+
+#createCardsContainer {
+    display: flex;
+    /* margin-inline-start: 10px; */
+    margin: 10px;
+}
+
+#createCards {
+    border: 1px solid rgb(5, 5, 5);
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.card-body {
+    border: 0px solid rgb(5, 5, 5);
+    border-radius: 4px;
+}
+
+.card-title {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+.card-subtitle {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.card-text {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* .spaceLinks {
+     padding: 20px;
+} */
+/********* END Create Index CSS *********/
+
+
 /********* Gradients for Create Page Backgrounds (Each page unique) *********/
+/*  */
 .gradient1 {
     background-image: linear-gradient(#f1f0b2, #d987ee);
 }
-
+/*  */
 .gradient2 {
     background-image: linear-gradient(#ccf3d8, #99e5f7, #d987ee);
 }
-
+/*  */
 .gradient3 {
     background-image: linear-gradient(#f7ffb3, #aefff1, #ffe59d);
+}
+/* CREATE INDEX */
+.gradient4 {
+    background-image: linear-gradient(#a8f9c0, #fff766, #ffe59d);
+}
+/* PROFILE PAGE */
+.gradient5 {
+    background-image: linear-gradient(#b0b7f4, #aefff1, #fba1a1);
+}
+/* POEMS INDEX */
+.gradient6 {
+    background-image: linear-gradient(#b0b7f4, #aefff1, #fba1a1);
 }
 /********* END GRADIENTS *********/
 
@@ -80,6 +193,7 @@ label {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 50px;
     /* flex direction could be good and define that as ROW. 
     keep in mind a sense of direction, what goes first in that row */
 }

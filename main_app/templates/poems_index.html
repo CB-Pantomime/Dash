@@ -1,23 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dash</title> 
-    </head>
+{% extends 'base.html' %}
+{% block title %}Create{% endblock %}
 
-<body>
-        <h1>poems index</h1>
+{% block content %}
 
-         <!-- List all student poems -->
-    {% for poem in poems.all reversed %}
-    <div class="poems">
-        <div class="poem-title">
-            {{poem.title}}
-        </div>     
-        <a class="poem-link" href="{% url 'poem_detail' poem.id%}"><button>Student: {{poem.name}}</button></a> 
-    {% endfor %}             
-    </div>
 
-</body>
+    <body class="gradient6">
+
+        <div class="container-md" id="poemsIndexFullContentStyling">
+
+            <div class="container-md" id="poemsIndexBox">
+                <h1 class="profilePageTitle">current work</h1>
+
+
+                    <!-- List all student poems -->                 
+                    <div class="card" style="width: 18rem;" id="poemsIndexCards">
+                        {% for poem in poems.all  %}
+                        <div class="card-body">
+                            <a id="styleA" style="color: rgb(244, 52, 171)"href="{% url 'poem_detail' poem.id%}" class="card-link"><h5 class="card-title">Title: {{poem.title}}</h5></a>
+                            <h6 class="card-subtitle ">Student: {{poem.name}}</h6>
+                            <p class="card-text">{{poem.body}}</p>
+                            
+                        </div>
+                        {% endfor %}
+                    </div>
+
+            </div>
+
+
+        <!-- Closing div for fullContentStyling -->
+        </div>  
+
+    </body>
+
+    {% comment %} 
+                    <!-- List all student poems -->
+                <!-- {% for poem in poems.all reversed %}
+                <div class="poems">
+                    <div class="poem-title">
+                        {{poem.title}}
+                    </div>     
+                    <a class="poem-link" href="{% url 'poem_detail' poem.id%}"><button>Student: {{poem.name}}</button></a> 
+                {% endfor %}             
+                </div> -->
+    {% endcomment %}
+
+
+{% endblock %}
+   
+
+
+
+   

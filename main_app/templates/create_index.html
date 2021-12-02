@@ -3,12 +3,47 @@
 
 {% block content %}
 
-<div class="list-group">
-    <a href="create/beach" class="list-group-item list-group-item-action">A Day At The Beach</a>
-    <a href="create/animals" class="list-group-item list-group-item-action">Animals</a>
-    <a href="create/touch" class="list-group-item list-group-item-action">Touch, Tap, Pat</a>
-    <a href="create/freewrite" class="list-group-item list-group-item-action">Free Write!</a>
-</div>
- 
+
+    <body class="gradient4">
+
+        <div class="container-md" id="createIndexFullContentStyling">
+
+
+        <div class="container" id="createCardsContainer">
+
+            <div class="card" style="width: 18rem;" id="createCards">
+                <a href="create/beach"><img src="https://i.ibb.co/55xCsgT/sand.jpg" class="card-img-top" alt="sand, plastic shovel and bucket"></a>
+                <div class="card-body">               
+                  <h5 class="card-text">A Day At The Beach</h5>
+                </div>
+              </div>
+              
+            <div class="card" style="width: 18rem;" id="createCards">
+                <a href="create/animals"><img src="https://i.ibb.co/txKkFhH/lion.jpg" class="card-img-top" alt="lion"></a>
+                <div class="card-body">
+                    <h5 class="card-text">Animals</h5>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;" id="createCards">
+                <a href="create/touch"><img src="https://i.ibb.co/WgJh0WF/crab.jpg" class="card-img-top" alt="Touch, finger, button"></a>
+                <div class="card-body">
+                    <h5 class="card-text">Touch, Tap, Pat</h5>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;" id="createCards">
+                <a href="create/freewrite"><img src="https://i.ibb.co/D4QHDPz/typewriter.jpg" class="card-img-top" alt="typewriter-in-watercolor"></a>
+                <div class="card-body">
+                    <h5 class="card-text">Free Write!</h5>
+                </div>
+            </div>
+        <!-- Closing div for createCardsContainer -->
+        </div>
+
+        <!-- Closing div for fullContentStyling -->
+        </div>  
+
+    </body>
 {% endblock %}
    
