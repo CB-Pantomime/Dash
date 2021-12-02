@@ -36,7 +36,7 @@
                     {% if user.is_authenticated %}
                         <div class="navbar-nav">   
                             {% comment %}  when placing "navbar-item" as the class in the span below, it is styling the string. There is no class named that in the main.css, regardless it is being styled. It is NOT styled when I comment out the link stylesheet for static styles/main.css {% endcomment %} 
-                            <span class="navbar-item">Welcome: dyn ren name</span> 
+                            <!-- <span class="navbar-item">Welcome: {{user.username}}</span>  -->
                          <a class="nav-link" href="{% url 'profile_detail' user.id %}">Your Profile</a>               
                             <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
                         </div>
