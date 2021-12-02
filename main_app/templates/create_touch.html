@@ -9,33 +9,50 @@
     <body class="gradient2"> 
         <h1 class="pageTitle">Touch, Tap, Pat</h1>
 
-        <!-- This div styles and shapes the overall content on the page -->
-            <div class="container-md" id="fullContentStyling">
-    
-                    <!-- Create Poem Form -->
-                <div class="container-md" id="formContainer">
-                    <div class="form-group">
-                        <!-- class="form-control" took this out of the form tag, made it messy but why?  -->
-                        <form method="post">
-                            <!-- Security Feature  -->
-                            {% csrf_token %} 
-                            <!--  Generate inputs  -->
-                            {{form.as_p}} 
-                            <!-- {{form.PoemForm}}  -->
-                            <!--  Submit form  -->
-                            <button class="btn" id="buttonPlacement">Save your poem</button>
-                            
-                        </form>
-                    </div>
-                </div>
-    
-                
-             <!-- Closing div for fullContentStyling -->
-            </div>
-    
-        </body>
-    
+    <!-- This div styles and shapes the overall content on the page -->
+        <div class="container-md" id="fullContentStyling">
 
+                <!-- Create Poem Form -->
+            <div class="container-md" id="formContainer">
+                <div class="form-group">
+                    <!-- class="form-control" took this out of the form tag, made it messy but why?  -->
+                    <form method="post">
+                        <!-- Security Feature  -->
+                        {% csrf_token %} 
+                        <!--  Generate inputs  -->
+                        {{form.as_p}} 
+                        <!-- {{form.PoemForm}}  -->
+                        <!--  Submit form  -->
+                        <button class="btn" id="buttonPlacement">Save your poem</button>
+                        
+                    </form>
+                </div>
+            </div>
+
+        
+            <div class="row">
+
+                <div class="column">
+                    <img src="https://i.ibb.co/34SC4tP/dog.jpg" alt="dog, a pug" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/5GMJN0g/bird.jpg" alt="bird" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/Ks3sQNM/frog.jpg" alt="frog" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/tQQBBWb/whale.jpg" alt="whale" style="width:100%">
+                </div>
+        
+            </div>
+
+
+             <!-- Closing div for fullContentStyling -->
+        </div>
+    
+    </body>
+    
 
 
 {% endblock %}
