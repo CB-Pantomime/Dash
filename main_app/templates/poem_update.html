@@ -5,13 +5,30 @@
 
 {% comment %} why is this giving me trouble: {% url 'poem_update' %} ?? when placed in the action= ??? {% endcomment%} 
 
+    <body class="gradient8">
 
-    <form method="post" action="">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Submit" />
-    </form>
-    
 
+        <div class="container-md" id="fullContentStyling">
+
+            <h1 class="pageTitle">edit</h1>
+            <!-- Create Poem Form -->
+            <div class="container-md" id="formContainer">
+                <div class="form-group">
+                    <!-- class="form-control" took this out of the form tag, made it messy but why?  -->
+                    <form method="post">
+                        <!-- Security Feature  -->
+                        {% csrf_token %} 
+                        <!--  Generate inputs  -->
+                        {{form.as_p}} 
+                        <!-- {{form.PoemForm}}  -->
+                        <!--  Submit form  -->
+                        <button class="btn" id="buttonPlacement">Save edit</button>
+                        
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </body>
 
 {% endblock %}
