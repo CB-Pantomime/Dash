@@ -11,17 +11,39 @@
 
         <div class="container-md" id="homeDiv">
             <div class="container-md" >
-                <h1 class="homePageTitle" style=font-size:69px >Welcome to Dash</h1>
-                <h3 class="dashBlurb">Dash allows your students to create poetry with grade-level word banks, themed prompts and dazzling illustrations. Let your students find their creative writing voices with a sense of independence.</h3>
-                <br>
-                <h3 class="dashBlurb"> Dash app is absolutely free and always will be. <a id="styleA" style="color: rgb(18, 174, 236)" href="/accounts/signup/">Interested?</a>
-                
-                </h3>
-            </div>
+
+
+                {% if user.is_authenticated %}
+
+                    <h1 class="homePageTitle" style=font-size:69px >Welcome back, {{user.username}}</h1>
+                    <h3 class="dashBlurb">Head on over to your 
+                        <a id="styleA" style="color: rgb(18, 174, 236)" href="{% url 'profile_detail' user.id %}">profile page</a> and check out what your students have been creating.</h3>
+                    <br>
+                    <h3 class="dashBlurb"> Would you like to catch up on the latest features for Dash? <a id="styleA" style="color: rgb(18, 174, 236)" href="">Check out our blog!</a>
+                    
+                    </h3>
+
+
+                {% else %}
+
+                    <h1 class="homePageTitle" style=font-size:69px >Welcome to Dash</h1>
+                    <h3 class="dashBlurb">Dash allows your students to create poetry with grade-level word banks, themed prompts and dazzling illustrations. Let your students find their creative writing voices with a sense of independence.</h3>
+                    <br>
+                    <h3 class="dashBlurb"> Dash app is absolutely free and always will be. <a id="styleA" style="color: rgb(18, 174, 236)" href="/accounts/signup/">Interested?</a>
+                    
+                    </h3>
+
+                {% endif %}
+
+        <!-- closing div for homeDiv -->
+        </div>
             
+
+            <!-- Promotional image *coming soon* -->
             <div class="container-lg">
                 <img src="" alt="" width="" height="">
             </div>
+
         </div> 
 
         <!-- Closing div for fullContentStyling -->

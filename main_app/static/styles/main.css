@@ -1,4 +1,7 @@
 
+.houseFont {
+    font-family: 'Josefin Sans', sans-serif;
+}
 
 /********* Nav Bar CSS *********/
 #navField {
@@ -79,12 +82,15 @@
     display: flex;
     align-items: center;
     justify-content: center; 
-    /* padding: 20px; */
-    /* margin-top: 10px;
-    margin-bottom: 50px; */
+    /* padding: 20px;  */
+    /* margin-top: 10px; */
+    margin-bottom: 50px; 
 }
+
 #poemsIndexBox {
     display: grid;
+    align-items: center;
+    justify-content: center; 
     margin: 10px;
     text-align: center;
     padding: 160px;
@@ -101,6 +107,39 @@
 /********* END Poems Index  CSS *********/
 
 
+
+
+/********* Poem Delete Page  CSS *********/
+#buttonDiv {
+    display: flex;
+}
+
+#styleDelete {
+        margin-left: 100px;
+        text-decoration-line: underline;
+        text-decoration-thickness: 5px;
+        text-underline-offset: 4px;
+        text-decoration-color: rgb(173, 244, 164);
+
+}
+
+#deletePoemFullContentStyling {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 10px;
+    margin-bottom: 700px; 
+}
+
+/********* END Poem Delete Page  CSS *********/
+#poemEditFormContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    /* flex direction could be good and define that as ROW. 
+    keep in mind a sense of direction, what goes first in that row */
+}
 /********* Create Index CSS *********/
 #createIndexFullContentStyling {
     display: flex;
@@ -171,7 +210,15 @@
 }
 /* POEMS INDEX */
 .gradient6 {
-    background-image: linear-gradient(#b0b7f4, #aefff1, #fba1a1);
+    background-image: linear-gradient(#adfe94, #d3b0f4, #00fff2);
+}
+/* POEM DETAIL */
+.gradient7 {
+    background-image: linear-gradient(#f4fbb3, #bbf9d7, #5953f9);
+}
+/* POEM UPDATE */
+.gradient8 {
+    background-image: linear-gradient(#f8ffce, #ffa2f6, #a2c0ff);
 }
 /********* END GRADIENTS *********/
 

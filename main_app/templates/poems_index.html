@@ -8,29 +8,50 @@
 
         <div class="container-md" id="poemsIndexFullContentStyling">
 
-            <div class="container-md" id="poemsIndexBox">
+
+            <div class="container-md" id="poemsIndexBox"> 
                 <h1 class="profilePageTitle">current work</h1>
-
-
                     <!-- List all student poems -->                 
                     <div class="card" style="width: 18rem;" id="poemsIndexCards">
                         {% for poem in poems.all  %}
                         <div class="card-body">
-                            <a id="styleA" style="color: rgb(244, 52, 171)"href="{% url 'poem_detail' poem.id%}" class="card-link"><h5 class="card-title">Title: {{poem.title}}</h5></a>
-                            <h6 class="card-subtitle ">Student: {{poem.name}}</h6>
-                            <p class="card-text">{{poem.body}}</p>
-                            
+                            <a id="styleA" style="color: rgb(244, 52, 171)"href="{% url 'poem_detail' poem.id%}" class="card-link"><h5 class="card-title">{{poem.title}}</h5></a>
+                            <br>
+                            <h6 class="card-subtitle ">{{poem.name}}</h6>
+
+                                                     
                         </div>
                         {% endfor %}
-                    </div>
-
-            </div>
+                    </div> 
 
 
-        <!-- Closing div for fullContentStyling -->
-        </div>  
+
+                    <!-- Closing div for poemsIndexBox -->
+                </div>
+        <!-- Closing div for poemsIndexFullContentStyling -->
+      </div>   
 
     </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     {% comment %} 
                     <!-- List all student poems -->

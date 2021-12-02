@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User
 from django.urls import reverse
-from .forms import PoemForm
+from .forms import PoemForm, UpdatePoemForm
 
 # IMPORT MODELS
 from .models import Poem
@@ -86,7 +86,7 @@ class CreateBeach(CreateView):
         return super(CreateBeach, self).form_valid(form)
 
     def get_success_url(self):
-       return reverse('poem_detail', kwargs={'pk': self.object.pk})
+       return reverse('confirm')
 
 
 @method_decorator(login_required, name='dispatch')
@@ -101,7 +101,7 @@ class CreateAnimals(CreateView):
         return super(CreateAnimals, self).form_valid(form)
 
     def get_success_url(self):
-       return reverse('poem_detail', kwargs={'pk': self.object.pk})
+       return reverse('confirm')
 
 
 @method_decorator(login_required, name='dispatch')
@@ -116,7 +116,7 @@ class CreateTouch(CreateView):
         return super(CreateTouch, self).form_valid(form)
 
     def get_success_url(self):
-       return reverse('poem_detail', kwargs={'pk': self.object.pk})
+       return reverse('confirm')
 
 
 @method_decorator(login_required, name='dispatch')
@@ -131,7 +131,7 @@ class CreateFreeWrite(CreateView):
         return super(CreateFreeWrite, self).form_valid(form)
 
     def get_success_url(self):
-       return reverse('poem_detail', kwargs={'pk': self.object.pk})
+       return reverse('confirm')
 
    
 
@@ -230,9 +230,15 @@ class PoemDetail(DetailView):
 class PoemUpdate(UpdateView):
 
     model = Poem
-    fields = ['name','title','body']
+    form_class = UpdatePoemForm
     template_name = "poem_update.html"
-    success_url = "/"
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(PoemUpdate, self).form_valid(form)
+
+    def get_success_url(self):
+       return reverse('poem_detail', kwargs={'pk': self.object.pk})
 
 
 @method_decorator(login_required, name='dispatch')
