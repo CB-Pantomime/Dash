@@ -6,83 +6,48 @@
 
     <body class="gradient3">
 
-    <!-- This div styles and shapes the overall content on the page -->
-    <div class="container-md" id="fullContentStyling">
-    <h1 class="pageTitle">A Day At The Beach</h1>
+        <!-- This div styles and shapes the overall content on the page -->
+        <div class="container-md" id="fullContentStyling">
+            <h1 class="pageTitle">A Day At The Beach</h1>
 
-     
-      <!-- Create Poem Form -->
-      <div class="container-md" id="formContainer">
-        <div class="form-group">
-            <!-- class="form-control" took this out of the form tag, made it messy but why?  -->
-            <form method="post">
-                <!-- Security Feature  -->
-                {% csrf_token %} 
-                <!--  Generate inputs  -->
-                {{form.as_p}} 
-                <!-- {{form.PoemForm}}  -->
-                <!--  Submit form  -->
-                <button class="btn" id="buttonPlacement">Save your poem</button>
-                
-            </form>
-        </div>
-    </div>
-
-
-    <div class="row">
-
-        <div class="column">
-          <img src="https://i.ibb.co/NY29Qk8/Sun.jpg" alt="Sun" style="width:100%">
-        </div>
-        <div class="column">
-            <img src="https://i.ibb.co/pR5PKdg/Fish.jpg" alt="Fish" style="width:100%">
-        </div>
-        <div class="column">
-            <img src="https://i.ibb.co/0G8ykvt/Play.jpg" alt="Play" style="width:100%">
-        </div>
-        <div class="column">
-            <img src="https://i.ibb.co/ZhpGt1x/Sea.jpg" alt="Sea" style="width:100%">
-        </div>
-
-    </div>
-
-
-       <!-- Carousel NEEDS WORK! -->
-    <!-- <div class="container-sm">
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-
-                <div class="carousel-item active" data-bs-interval="1000000">
-                    <img src="https://i.ibb.co/NY29Qk8/Sun.jpg" class="d-block w-100" alt="...">
+            
+            <!-- Create Poem Form -->
+            <div class="container-md" id="formContainer">
+                <div class="form-group">
+                    <!-- class="form-control" took this out of the form tag, made it messy but why?  -->
+                    <form method="post">
+                        <!-- Security Feature  -->
+                        {% csrf_token %} 
+                        <!--  Generate inputs  -->
+                        {{form.as_p}} 
+                        <!-- {{form.PoemForm}}  -->
+                        <!--  Submit form  -->
+                        <button class="btn" id="buttonPlacement">Save your poem</button>
+                        
+                    </form>
                 </div>
-
-                <div class="carousel-item" data-bs-interval="1000000">
-                    <img src="https://i.ibb.co/pR5PKdg/Fish.jpg" class="d-block w-100" alt="...">
-                </div>
-
-                <div class="carousel-item" data-bs-interval="1000000">
-                    <img src="https://i.ibb.co/0G8ykvt/Play.jpg" class="d-block w-100" alt="...">
-                </div>
-
-                <div class="carousel-item" data-bs-interval="1000000">
-                    <img src="https://i.ibb.co/ZhpGt1x/Sea.jpg" class="d-block w-100" alt="...">
-                </div>
-
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div> -->
 
-      <!-- Closing div for fullContentStyling -->
-    </div>
+            <div class="row">
+
+                <div class="column">
+                <img src="https://i.ibb.co/NY29Qk8/Sun.jpg" alt="Sun" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/pR5PKdg/Fish.jpg" alt="Fish" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/0G8ykvt/Play.jpg" alt="Play" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="https://i.ibb.co/ZhpGt1x/Sea.jpg" alt="Sea" style="width:100%">
+                </div>
+
+            </div>      
+
+        <!-- Closing div for fullContentStyling -->
+        </div>
     </body>
       
 {% endblock %}

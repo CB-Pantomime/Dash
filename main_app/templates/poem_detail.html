@@ -3,28 +3,42 @@
 
 {% block content %}
    
-    <h1>poem detail page</h1>
-    <div class="container">
 
-        <div class="poems">
-            <div class="poem">
-                <h3>Title: {{poem.title}}</h3>
-                <h5>Student: {{poem.name}}</h5>
-                <p>Poem: {{poem.body}}</p>
-            </div>                  
-        </div>
 
-        <div>  
-      
-            <a href="{% url 'poem_update' poem.id %}" class="button is-info">
-                Edit 
-            </a>
-            <a href="{% url 'poem_delete' poem.id %}" class="button is-danger">
-                Delete 
-            </a>
-       
-        </div>  
+    <body class="gradient7">
 
-    </div>
+        <!-- This div styles and shapes the overall content on the page -->
+        <div class="container-md" id="fullContentStyling">
+
+            <div class="container" id="profilePageBox">
+                    
+                <div class="card" style="width: 28rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{poem.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{poem.name}}</h6>
+                        <p class="card-text">{{poem.body}}</p>
+                    </div>
+                   
+                </div>
+                
+                <div class="container-md" id="profilePageBox">
+                    <a id="styleA" style="color: rgb(244, 52, 171)" href="{% url 'poem_update' poem.id %}" class="button is-info">
+                        <h5>edit</h5> 
+                        </a>
+                        <br>
+                        <a id="styleA" style="color: rgb(244, 52, 171)" href="{% url 'poem_delete' poem.id %}" class="button is-danger">
+                            <h5>delete</h5> 
+                        </a>
+                </div>
+
+                <!-- Closing div for createCardsContainer -->
+            </div>
+            <!-- Closing div for poemsIndexFullContentStyling -->
+        </div>   
+
+    </body>
+
+
+
 
 {% endblock %}
