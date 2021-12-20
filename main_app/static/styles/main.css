@@ -192,11 +192,19 @@
 .gradient1 {
     background-image: linear-gradient(#f1f0b2, #d987ee);
 }
-/*  */
+/* ANIMALS PROMPT */
 .gradient2 {
-    background-image: linear-gradient(#ccf3d8, #99e5f7, #d987ee);
+    background-image: linear-gradient(#89f8aa, #ffd4b0, #d987ee);
 }
-/*  */
+/* TOUCH, TAP, PAT PROMPT */
+.gradient9 {
+    background-image: linear-gradient(#e4c7ff, #ff9497, #fff781);
+}
+/* FREE WRITE PROMPT */
+.gradient10 {
+    background-image: linear-gradient(#fffaf6, #e3fea3, #a0b1ff);
+}
+/* A DAY AT THE BEACH PROMPT */
 .gradient3 {
     background-image: linear-gradient(#f7ffb3, #aefff1, #ffe59d);
 }
